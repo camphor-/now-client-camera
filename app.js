@@ -19,7 +19,7 @@ let parseMode = (mode) => {
   case 'sample':
     return _mode;
   default:
-    return 'sample'
+    return 'sample';
   }
 };
 
