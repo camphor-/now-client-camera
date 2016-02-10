@@ -8,7 +8,7 @@ import io from 'socket.io-client';
 const NAMESPACE = '/camera';
 
 // Logger
-const debug = debugLogger('application');
+const debug = debugLogger('now-client-camera');
 
 // Parse command line arguments
 let parseMode = (mode) => {
