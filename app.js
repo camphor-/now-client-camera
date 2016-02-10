@@ -1,6 +1,6 @@
 import {argv} from 'yargs';
 import debugLogger from 'debug';
-import fs from 'fs';
+import {execSync} from 'child_process';
 import io from 'socket.io-client';
 
 const debug = debugLogger('application');
@@ -25,18 +25,9 @@ socket.on('disconnect', () => {
 socket.on('take picture', (data) => {
   debug('take picture');
   const responseEvent = data.responseEvent;
-
-  // TODO: Take a picture w/ Raspberry Pi
-  fs.readFile('./test.jpg', (err, data) => {
-    if (err) {
-      socket.emit(responseEvent, {
-        success: false
-      });
-      return;
-    }
-
-    socket.emit(responseEvent, {
-      success: true
-    });
+  const picture = execSync('raspistill -w 320 -h 240 -n -e jpg -o -');
+  socket.emit(responseEvent, {
+    success: true,
+    data: picture
   });
 });
