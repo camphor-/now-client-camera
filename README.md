@@ -6,3 +6,4 @@
 Examples:
 - `npm start -- --mode=raspistill http://192.168.1.128:3000`
 - `DEBUG=now-client-camera npm start -- --mode=sample http://192.168.1.128:3000`
+- `npm start -- --mode=sample --authorization='Basic <token>' http://192.168.1.128:3000`

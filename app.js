@@ -25,13 +25,21 @@ let parseMode = (mode) => {
 
 const url = argv._[0] || 'http://localhost:3000';
 const mode = parseMode(argv.mode);
+const authorization = argv.authorization;
 
 // Start
 debug(`Server URL: ${url}`);
 debug(`Namespace: ${NAMESPACE}`);
 debug(`Mode: ${mode}`);
 
-const socket = io(`${url}${NAMESPACE}`);
+const extraHeaders = {};
+if (authorization) {
+  extraHeaders.Authorization = authorization
+}
+
+const socket = io(`${url}${NAMESPACE}`, {
+  extraHeaders: extraHeaders
+});
 
 socket.on('connect', () => {
   debug('connected');
