@@ -1,6 +1,8 @@
 # now-client-camera
 
 [![Build Status](https://travis-ci.org/camphor-/now-client-camera.svg?branch=master)](https://travis-ci.org/camphor-/now-client-camera)
+[![Dependency Status](https://david-dm.org/camphor-/now-client-camera.svg)](https://david-dm.org/camphor-/now-client-camera)
+[![devDependency Status](https://david-dm.org/camphor-/now-client-camera/dev-status.svg)](https://david-dm.org/camphor-/now-client-camera#info=devDependencies)
 
 ## Run
 Examples:
