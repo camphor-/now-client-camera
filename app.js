@@ -34,7 +34,7 @@ debug(`Mode: ${mode}`);
 
 const extraHeaders = {};
 if (authorization) {
-  extraHeaders.Authorization = authorization
+  extraHeaders.Authorization = authorization;
 }
 
 const socket = io(`${url}${NAMESPACE}`, {
