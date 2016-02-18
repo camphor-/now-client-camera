@@ -11,5 +11,14 @@ Examples:
 - `npm start -- --driver=sample --authorization='Basic <token>' http://192.168.1.128:3000`
 
 ### Drivers
-- `raspistill` - Raspberry Pi Camera Module
-- `sample` - Sample JPEG image
+Specify a driver with `--driver=` option. (default: `sample`)
+
+#### raspistill
+Raspberry Pi Camera Module
+
+Environment variables:
+- `RASPISTILL_WIDTH` - Width of a picture (default: 320)
+- `RASPISTILL_HEIGHT` - Height of a picture (default: 240)
+
+#### sample
+Sample JPEG image
