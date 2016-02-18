@@ -6,6 +6,10 @@
 
 ## Run
 Examples:
-- `npm start -- --mode=raspistill http://192.168.1.128:3000`
-- `DEBUG=now-client-camera npm start -- --mode=sample http://192.168.1.128:3000`
-- `npm start -- --mode=sample --authorization='Basic <token>' http://192.168.1.128:3000`
+- `npm start -- --driver=raspistill http://192.168.1.128:3000`
+- `DEBUG=now-client-camera npm start -- --driver=sample http://192.168.1.128:3000`
+- `npm start -- --driver=sample --authorization='Basic <token>' http://192.168.1.128:3000`
+
+### Drivers
+- `raspistill` - Raspberry Pi Camera Module
+- `sample` - Sample JPEG image
