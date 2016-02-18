@@ -12,9 +12,9 @@
     "babel-preset-es2015-node5": "~1.1.2",
     "debug": "~2.2.0",
     "socket.io-client": "~1.4.5",
-    "yargs": "~3.32.0"
+    "yargs": "~4.1.0"
   },
   "devDependencies": {
-    "eslint": "~2.0.0"
+    "eslint": "~2.1.0"
   }
 }
