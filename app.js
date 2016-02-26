@@ -2,9 +2,7 @@ import {argv} from 'yargs';
 import debugLogger from 'debug';
 import io from 'socket.io-client';
 
-import imagesnap from './lib/drivers/imagesnap';
-import raspistill from './lib/drivers/raspistill';
-import sampleFile from './lib/drivers/sample';
+import {getDriver} from './lib/drivers/utils';
 
 // Constants
 const NAMESPACE = '/camera';
@@ -12,29 +10,15 @@ const NAMESPACE = '/camera';
 // Logger
 const debug = debugLogger('now-client-camera');
 
-// Parse command line arguments
-let parseDriver = (driver) => {
-  const _driver = (driver || '').toLowerCase();
-  switch (_driver) {
-  case 'raspistill':
-    return _driver;
-  case 'imagesnap':
-    return _driver;
-  case 'sample':
-    return _driver;
-  default:
-    return 'sample';
-  }
-};
-
 const url = argv._[0] || 'http://localhost:3000';
-const driver = parseDriver(argv.driver);
+const driverClass = getDriver(argv.driver);
+const driver = new driverClass();
 const authorization = argv.authorization;
 
 // Start
 debug(`Server URL: ${url}`);
 debug(`Namespace: ${NAMESPACE}`);
-debug(`Driver: ${driver}`);
+debug(`Driver: ${driver.name}`);
 
 const extraHeaders = {};
 if (authorization) {
@@ -56,18 +40,7 @@ socket.on('disconnect', () => {
 socket.on('take picture', (data) => {
   debug('take picture');
   const responseEvent = data.responseEvent;
-  (() => {
-    switch (driver) {
-    case 'imagesnap':
-      return imagesnap;
-    case 'sample':
-      return sampleFile;
-    case 'raspistill':
-      return raspistill;
-    default:
-      return sampleFile;
-    }
-  })()().then(
+  driver.take().then(
     (pictureData) => {
       debug('success');
       socket.emit(responseEvent, {
