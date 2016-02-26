@@ -20,5 +20,10 @@ Environment variables:
 - `RASPISTILL_WIDTH` - Width of a picture (default: 320)
 - `RASPISTILL_HEIGHT` - Height of a picture (default: 240)
 
+#### imagesnap
+MacBook
+
+Note: Install [imagesnap](https://github.com/rharder/imagesnap) for using this driver.
+
 #### sample
 Sample JPEG image

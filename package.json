@@ -1,6 +1,6 @@
 {
   "name": "now-client-camera",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "eslint": "./node_modules/eslint/bin/eslint.js .",
@@ -12,9 +12,9 @@
     "babel-preset-es2015-node5": "~1.1.2",
     "debug": "~2.2.0",
     "socket.io-client": "~1.4.5",
-    "yargs": "~4.1.0"
+    "yargs": "~4.2.0"
   },
   "devDependencies": {
-    "eslint": "~2.1.0"
+    "eslint": "~2.2.0"
   }
 }
