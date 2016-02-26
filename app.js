@@ -18,7 +18,7 @@ const authorization = argv.authorization;
 // Start
 debug(`Server URL: ${url}`);
 debug(`Namespace: ${NAMESPACE}`);
-debug(`Driver: ${driver.name}`);
+debug(`Driver: ${driverClass.name}`);
 
 const extraHeaders = {};
 if (authorization) {
