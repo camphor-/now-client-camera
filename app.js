@@ -2,6 +2,7 @@ import {argv} from 'yargs';
 import debugLogger from 'debug';
 import io from 'socket.io-client';
 
+import imagesnap from './lib/drivers/imagesnap';
 import raspistill from './lib/drivers/raspistill';
 import sampleFile from './lib/drivers/sample';
 
@@ -16,6 +17,8 @@ let parseDriver = (driver) => {
   const _driver = (driver || '').toLowerCase();
   switch (_driver) {
   case 'raspistill':
+    return _driver;
+  case 'imagesnap':
     return _driver;
   case 'sample':
     return _driver;
@@ -55,6 +58,8 @@ socket.on('take picture', (data) => {
   const responseEvent = data.responseEvent;
   (() => {
     switch (driver) {
+    case 'imagesnap':
+      return imagesnap;
     case 'sample':
       return sampleFile;
     case 'raspistill':
