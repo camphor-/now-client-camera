@@ -1,6 +1,6 @@
 {
   "name": "now-client-camera",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "eslint": "./node_modules/eslint/bin/eslint.js .",
