@@ -4,11 +4,18 @@
 [![Dependency Status](https://david-dm.org/camphor-/now-client-camera.svg)](https://david-dm.org/camphor-/now-client-camera)
 [![devDependency Status](https://david-dm.org/camphor-/now-client-camera/dev-status.svg)](https://david-dm.org/camphor-/now-client-camera#info=devDependencies)
 
+## Install
+- `npm install -g now-client-camera`
+
+## Build
+- `npm install`
+- `npm run build` or `npm run watch`
+- `npm link && now-client-camera` or `npm start --`
+
 ## Run
-Examples:
-- `npm start -- --driver=raspistill http://192.168.1.128:3000`
-- `DEBUG=now-client-camera npm start -- --driver=sample http://192.168.1.128:3000`
-- `npm start -- --driver=sample --authorization='Basic <token>' http://192.168.1.128:3000`
+- `now-client-camera --driver=raspistill http://192.168.1.128:3000`
+- `DEBUG=now-client-camera now-client-camera --driver=sample http://192.168.1.128:3000`
+- `now-client-camera --driver=sample --authorization='Basic <token>' http://192.168.1.128:3000`
 
 ### Drivers
 Specify a driver with `--driver=` option. (default: `sample`)
