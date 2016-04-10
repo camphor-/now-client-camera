@@ -1,9 +1,4 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-class BaseDriver {
+export default class BaseDriver {
   constructor() {
     if (new.target === BaseDriver) {
       throw new TypeError('Cannot instantiate BaseDriver class');
@@ -14,4 +9,3 @@ class BaseDriver {
     }
   }
 }
-exports.default = BaseDriver;
