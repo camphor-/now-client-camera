@@ -1,7 +1,8 @@
 {
   "name": "now-client-camera",
-  "version": "0.3.0",
-  "private": true,
+  "version": "0.4.0",
+  "description": "CAMPHOR- Now Camera Client",
+  "preferGlobal": true,
   "bin": {
     "now-client-camera": "./app.js"
   },
@@ -11,6 +12,14 @@
     "eslint": "./node_modules/eslint/bin/eslint.js app.js ./src",
     "start": "./app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/camphor-/now-client-camera"
+  },
+  "bugs": {
+    "url": "https://github.com/camphor-/now-client-camera/issues"
+  },
+  "license": "MIT",
   "dependencies": {
     "debug": "~2.2.0",
     "socket.io-client": "~1.4.5",
