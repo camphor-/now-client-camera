@@ -4,6 +4,10 @@
 [![Dependency Status](https://david-dm.org/camphor-/now-client-camera.svg)](https://david-dm.org/camphor-/now-client-camera)
 [![devDependency Status](https://david-dm.org/camphor-/now-client-camera/dev-status.svg)](https://david-dm.org/camphor-/now-client-camera#info=devDependencies)
 
+## Build
+- `npm install`
+- `npm run build` or `npm run watch`
+
 ## Run
 Examples:
 - `npm start -- --driver=raspistill http://192.168.1.128:3000`
