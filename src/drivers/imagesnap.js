@@ -1,4 +1,4 @@
-import {exec} from 'child_process';
+import { exec } from 'child_process';
 
 import BaseDriver from './base';
 
@@ -14,8 +14,8 @@ export default class extends BaseDriver {
     return new Promise((resolve, reject) => {
       exec(`imagesnap -w ${WARM_UP_DURATION} -`, {
         encoding: 'buffer',
-        maxBuffer: MAX_BUFFER
-      }, (err, stdout, stderr) => {
+        maxBuffer: MAX_BUFFER,
+      }, (err, stdout) => {
         if (err === null) {
           resolve(stdout);
         } else {

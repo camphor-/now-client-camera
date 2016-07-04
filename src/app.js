@@ -1,8 +1,8 @@
-import {argv} from 'yargs';
+import { argv } from 'yargs';
 import debugLogger from 'debug';
 import io from 'socket.io-client';
 
-import {getDriver} from './drivers/utils';
+import { getDriver } from './drivers/utils';
 
 // Constants
 const NAMESPACE = '/camera';
@@ -11,14 +11,14 @@ const NAMESPACE = '/camera';
 const debug = debugLogger('now-client-camera');
 
 const url = argv._[0] || 'http://localhost:3000';
-const driverClass = getDriver(argv.driver);
-const driver = new driverClass();
+const DriverClass = getDriver(argv.driver);
+const driver = new DriverClass();
 const authorization = argv.authorization;
 
 // Start
 debug(`Server URL: ${url}`);
 debug(`Namespace: ${NAMESPACE}`);
-debug(`Driver: ${driverClass.name}`);
+debug(`Driver: ${DriverClass.name}`);
 
 const extraHeaders = {};
 if (authorization) {
@@ -26,7 +26,7 @@ if (authorization) {
 }
 
 const socket = io(`${url}${NAMESPACE}`, {
-  extraHeaders: extraHeaders
+  extraHeaders,
 });
 
 socket.on('connect', () => {
@@ -45,14 +45,14 @@ socket.on('take picture', (data) => {
       debug('success');
       socket.emit(responseEvent, {
         success: true,
-        data: pictureData
+        data: pictureData,
       });
     },
     (errorMessage) => {
       debug(`error: ${errorMessage}`);
       socket.emit(responseEvent, {
         success: false,
-        message: errorMessage
+        message: errorMessage,
       });
     }
   );
