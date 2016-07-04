@@ -4,6 +4,9 @@
 [![Dependency Status](https://david-dm.org/camphor-/now-client-camera.svg)](https://david-dm.org/camphor-/now-client-camera)
 [![devDependency Status](https://david-dm.org/camphor-/now-client-camera/dev-status.svg)](https://david-dm.org/camphor-/now-client-camera#info=devDependencies)
 
+## Requirements
+- Node.js v4+
+
 ## Install
 - `npm install -g now-client-camera`
 
