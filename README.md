@@ -5,17 +5,17 @@
 [![devDependency Status](https://david-dm.org/camphor-/now-client-camera/dev-status.svg)](https://david-dm.org/camphor-/now-client-camera#info=devDependencies)
 
 ## Requirements
-- Node.js v4+
+- Node.js v8+
 
-## Install
-- `npm install -g now-client-camera`
+## Instruction for users
+- Install: `npm install -g now-client-camera`
+- Run: `now-client-camera`
 
-## Build
-- `npm install`
-- `npm run build` or `npm run watch`
-- `npm link && now-client-camera` or `npm start --`
+## Instruction for developers
+- Install: `npm install`
+- Run: `./bin/now-client-camera.js`
 
-## Run
+## Options
 - `now-client-camera --driver=raspistill http://192.168.1.128:3000`
 - `DEBUG=now-client-camera now-client-camera --driver=sample http://192.168.1.128:3000`
 - `now-client-camera --driver=sample --authorization='Basic <token>' http://192.168.1.128:3000`
