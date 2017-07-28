@@ -7,8 +7,6 @@
     "now-client-camera": "./app.js"
   },
   "scripts": {
-    "build": "./node_modules/babel-cli/bin/babel.js src -d lib",
-    "watch": "./node_modules/babel-cli/bin/babel.js --watch src -d lib",
     "eslint": "./node_modules/eslint/bin/eslint.js app.js ./src",
     "start": "./app.js"
   },
@@ -23,7 +21,7 @@
   "files": [
     "README.md",
     "app.js",
-    "lib",
+    "src",
     "package.json"
   ],
   "engines": {
@@ -35,9 +33,6 @@
     "yargs": "~4.7.1"
   },
   "devDependencies": {
-    "babel-cli": "~6.10.1",
-    "babel-preset-es2015": "~6.9.0",
-    "babel-preset-es2016": "~6.11.0",
     "eslint": "~2.13.1",
     "eslint-config-airbnb-base": "~3.0.1",
     "eslint-plugin-import": "~1.10.1"

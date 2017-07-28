@@ -1,8 +1,8 @@
-import { readFile } from 'fs';
+const { readFile } = require('fs');
 
-import BaseDriver from './base';
+const BaseDriver = require('./base');
 
-export default class extends BaseDriver {
+class SampleDriver extends BaseDriver {
   static get name() {
     return 'sample';
   }
@@ -19,3 +19,5 @@ export default class extends BaseDriver {
     });
   }
 }
+
+module.exports = SampleDriver;

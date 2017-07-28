@@ -1,6 +1,6 @@
-import { exec } from 'child_process';
+const { exec } = require('child_process');
 
-import BaseDriver from './base';
+const BaseDriver = require('./base');
 
 const MAX_BUFFER = 1 * 1024 * 1024; // 1MiB
 
@@ -15,7 +15,7 @@ const parseInteger = (string, defaultValue) => {
 const WIDTH = parseInteger(process.env.RASPISTILL_WIDTH, 320);
 const HEIGHT = parseInteger(process.env.RASPISTILL_HEIGHT, 240);
 
-export default class extends BaseDriver {
+class RaspistillDriver extends BaseDriver {
   static get name() {
     return 'raspistill';
   }
@@ -35,3 +35,5 @@ export default class extends BaseDriver {
     });
   }
 }
+
+module.exports = RaspistillDriver;

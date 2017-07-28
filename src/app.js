@@ -1,8 +1,8 @@
-import { argv } from 'yargs';
-import debugLogger from 'debug';
-import io from 'socket.io-client';
+const { argv } = require('yargs');
+const debugLogger = require('debug');
+const io = require('socket.io-client');
 
-import { getDriver } from './drivers/utils';
+const { getDriver } = require('./drivers/utils');
 
 // Constants
 const NAMESPACE = '/camera';

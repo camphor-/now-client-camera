@@ -1,6 +1,6 @@
-import ImagesnapDriver from './imagesnap';
-import RaspistillDriver from './raspistill';
-import SampleDriver from './sample';
+const ImagesnapDriver = require('./imagesnap');
+const RaspistillDriver = require('./raspistill');
+const SampleDriver = require('./sample');
 
 const DRIVERS_LIST = [ImagesnapDriver, RaspistillDriver, SampleDriver];
 const DRIVERS = (() => {
@@ -11,6 +11,10 @@ const DRIVERS = (() => {
   return drivers;
 })();
 
-export function getDriver(name) {
+function getDriver(name) {
   return DRIVERS[(name || '').toLowerCase().toLowerCase()] || SampleDriver;
 }
+
+module.exports = {
+  getDriver,
+};
