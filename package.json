@@ -1,6 +1,6 @@
 {
   "name": "now-client-camera",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "CAMPHOR- Now Camera Client",
   "bin": {
     "now-client-camera": "./bin/now-client-camera.js"
