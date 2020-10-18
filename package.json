@@ -22,7 +22,7 @@
   "dependencies": {
     "debug": "^3.0.0",
     "socket.io-client": "^1.4.8",
-    "yargs": "^8.0.2"
+    "yargs": "^16.1.0"
   },
   "devDependencies": {
     "eslint": "^4.3.0",
